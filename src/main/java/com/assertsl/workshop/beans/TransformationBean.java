@@ -26,7 +26,13 @@ public class TransformationBean {
     public Map updateDrugParameters(DrugDto drugDto) {
         Map<String, Object> updateParameters = new HashMap<String, Object>();
         //TODO: set parameters from dto and update the entity
+        updateParameters.put("price", drugDto.getPrice());
+        updateParameters.put("existences", drugDto.getExistences());
         return updateParameters;
+    }
+    
+    public void updateDrugStatus(DrugDto drugDto) {
+    	drugDto.setStatus("INACTIVE");
     }
 
     public void readContentRequest(Exchange exchange) throws IOException, MessagingException {
