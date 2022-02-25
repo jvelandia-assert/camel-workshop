@@ -33,7 +33,7 @@ public class TransformationBean {
     }
         
     public Map updateDrugStatus(@Header("ncdCode") String ncdCode) {
-        Map<String, String> queryParameters = new HashMap<String, String>();
+        Map<String, Object> queryParameters = new HashMap<String, Object>();
         queryParameters.put("productNdc", ncdCode);
         return queryParameters;
     }
